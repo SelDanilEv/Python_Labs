@@ -1,5 +1,7 @@
-import matplotlib.pyplot as plt
+import sklearn
 import mglearn
+import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 
 X, y = mglearn.datasets.make_forge()
@@ -32,7 +34,7 @@ print("Количество примеров для каждого класса:
 
 from sklearn.datasets import load_boston
 boston = load_boston()
-print("формамассива data для набора boston: {}".format(boston.data.shape))
+print("форма массива data для набора boston: {}".format(boston.data.shape))
 
 X, y = mglearn.datasets.load_extended_boston()
 print("форма массива X: {}".format(X.shape))

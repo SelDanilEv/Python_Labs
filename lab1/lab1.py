@@ -1,6 +1,13 @@
-import matplotlib.pyplot as plt
-import mglearn
+import sys
 import pandas as pds
+import mglearn
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy as sp
+import IPython
+import sklearn
+
 from sklearn.datasets import load_iris
 
 iris_dataset = load_iris()
@@ -23,9 +30,8 @@ print("Форма массива target: {}".format(iris_dataset['target'].shape
 print("Ответы:\n{}".format(iris_dataset['target']))
 
 from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(
-    iris_dataset['data'], iris_dataset['target'], random_state=0)
+iris_dataset['data'], iris_dataset['target'], random_state=0)
 
 print("форма массива X_train: {}".format(X_train.shape))
 print("форма массива y_train: {}".format(y_train.shape))
@@ -38,6 +44,6 @@ iris_dataframe = pds.DataFrame(X_train, columns=iris_dataset.feature_names)
 from pandas.plotting import scatter_matrix
 
 grr = scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',
-                     hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
+            hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
 
 plt.show()
